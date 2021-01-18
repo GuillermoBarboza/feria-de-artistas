@@ -1,7 +1,7 @@
 const controllers = require('./controllers/controllers')
 
 const routes = (app) => {
-    app.get('/api/test', controllers.testAPI)
+    app.get('/', controllers.testAPI)
 } 
 
 module.exports = routes; 
