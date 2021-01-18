@@ -5,10 +5,11 @@ const Artist = require('../models/Artist')
 module.exports = {
     testAPI: (req, res) => {
         console.log('test log')
-        res.json('ok')
+        return res.json('oki')
     },
     allProducts: async (req, res) => {
-        const products = await products.find({})
-        res.json(products)
+        const products = await Product.find({})
+        console.log(products)
+        return res.json('product ok')
     }
 }
