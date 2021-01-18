@@ -1,14 +1,8 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(PROCESS.ENV.CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set('useUnifiedTopology', true);
+mongoose.set('useNewUrlParser', true);
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('connegtadissimo')
-});
-
-
+mongoose.connect(process.env.CONNECTION_STRING);
 module.exports = mongoose;
-
